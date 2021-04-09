@@ -1,9 +1,10 @@
 import './App.css';
 import {  Route, Link } from 'react-router-dom'
-import Home from './Components/Home'
+import Home from './Components/Home/Home'
 import { useEffect, useState } from 'react';
-import DrinkDetail from './Components/DrinkDetail'
-
+import DrinkDetail from './Components/DrinkDetails/DrinkDetail'
+import Nav from './Components/Nav/Nav'
+import Footer from './Components/Footer/Footer'
 
 
 export default function App () {
@@ -12,7 +13,7 @@ export default function App () {
 
    const makeHomeAPICall = async () => {
       try{
-          const res = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');
+          const res = await fetch('https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php');
           const data = await res.json();
           setHomeData(data.drinks)
       } catch(err){
@@ -28,9 +29,7 @@ export default function App () {
 
   return (
     <div className='app'>
-      <nav className='nav-container'>
-        <Link key='Home' to="/" className='home-link'>Home</Link>
-      </nav>
+      < Nav />
       <main>
         
           <Route path="/" exact render={() => <Home homeData={homeData}/> } />
@@ -43,9 +42,7 @@ export default function App () {
           
         
       </main>
-      <footer className='footer-container'> 
-
-      </footer>
+      <Footer/>
     </div>
       
     

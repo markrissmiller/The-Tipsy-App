@@ -6,7 +6,7 @@ function Home({homeData}) {
     <div>
       { homeData.map((drink, i)=> {
         return(
-          <Link to={`/drink/${drink.idDrink}` } >
+          <Link to={`/drink/${drink.idDrink}`} className='drink' key={i} >
                     <div className='drink-display'
                      style={{backgroundImage: `url(${drink.strDrinkThumb})`}}
                      >
