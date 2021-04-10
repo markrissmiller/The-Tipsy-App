@@ -8,8 +8,35 @@ import Footer from './Components/Footer/Footer'
 
 
 export default function App () {
+  const [searchString, setSearchString] = useState('');
   
   const [homeData, setHomeData] = useState([]);
+  
+  function handleChange(event) {
+    setSearchString(event.target.value);
+  }
+  
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchAPICall(searchString);
+  }
+
+  const searchAPICall = async () => {
+    try{
+      const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchString}`);
+      const data = await res.json();
+      if(data.drinks === null){ 
+        setHomeData([])
+      } else{
+        setHomeData(data.drinks)
+      }
+      console.log(data)
+    } catch(err){
+      console.log(err)
+    }
+  }
+
+  
 
    const makeHomeAPICall = async () => {
       try{
@@ -29,7 +56,11 @@ export default function App () {
 
   return (
     <div className='app'>
-      < Nav />
+      < Nav 
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          searchString={searchString}
+          setHomeData={setHomeData}/>
       <main>
         
           <Route path="/" exact render={() => <Home homeData={homeData}/> } />
