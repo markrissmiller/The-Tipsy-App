@@ -92,9 +92,9 @@ form{
     
 }
 
-.welcome{
+/* .welcome{
     width: 100vw;
-}
+} */
 
 .footer-container{
     width: 100%;
@@ -129,7 +129,7 @@ form{
   
     .gallery {
       column-count: 2;
-     
+     height: 100vh;
     }
     .drink-display{
         height: 30vh;
