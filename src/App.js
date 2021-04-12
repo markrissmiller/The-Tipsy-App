@@ -27,10 +27,11 @@ export default function App () {
       const data = await res.json();
       if(data.drinks === null){ 
         setHomeData([])
+        setSearchString('')
       } else{
         setHomeData(data.drinks)
+        setSearchString('')
       }
-      console.log(data)
     } catch(err){
       console.log(err)
     }
@@ -53,9 +54,12 @@ export default function App () {
    useEffect(()=>{
      makeHomeAPICall();
    },[])
+   
+  
 
   return (
     <div className='app'>
+      <Link to='/' key='Home' className='home-link'><div className='header' >The Tipsy App</div></Link>
       < Nav 
           handleChange={handleChange}
           handleSubmit={handleSubmit}
@@ -70,6 +74,7 @@ export default function App () {
           );
           return <DrinkDetail {...routerProps} drink={drink[0]}/>
         }}/>
+         
           
         
       </main>

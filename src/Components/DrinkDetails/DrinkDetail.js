@@ -21,7 +21,7 @@ export default function DrinkDetail({drink}){
 
     }
     return(
-        <div> 
+        <div className='drink-detail'> 
             <div className='drink-display' style={{backgroundImage: `url(${drink.strDrinkThumb})`}}></div>
             <h1>{drink.strDrink}</h1>
             <p>Glass type: {drink.strGlass}</p>

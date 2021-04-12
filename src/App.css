@@ -9,39 +9,70 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    flex-wrap: nowrap;
 
+}
+
+.center{
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+.gallery{
+ width: 100vw;
+ flex-wrap: nowrap;
+ height: fit-content;
+ background-color: #C0D6DF;
 }
 
 .drink-display{
     height: 30vh;
-    width: 30vh;
+    box-shadow: 2px 0px 0px #4f6d7a;
     background-size: cover;
-    margin: 30px ;
+    padding: 10px 0px 0px 0px ;
     display: flex;
     align-items: flex-end;
-    color: blanchedalmond;
+    color: #E8DAB2;
     text-shadow: 1px 0px 0px black;
+    flex-wrap: nowrap;
+    width: 100vw;
+    background-color: ;
     
 }
 
 .drink{
     text-decoration: none;
+    padding: 15px;
+}
+
+.drink-name{
+    padding: 10px;
+    background-color: #dd6e4265;
+    width: 100%;
+    
+}
+
+.drink-detail{
+    background-color: #C0D6DF;
+    height: 100vh;
 }
 
 *Link{
     text-decoration: none;
+    flex-wrap: nowrap;
 }
 
 .nav-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
+    width: 100vw;
     height: 8vh;
-    background-color: black;
+    background-color: #4f6d7a;
     align-items: center;
     justify-content: center;
-    /* display: inline; */
+    /* margin: 0px 0px 70px; */
+   
 }
 
 form{
@@ -49,20 +80,39 @@ form{
     display: inline;
 }
 
+.header{
+    width: 100vw;
+    background-color:#4f6d7a;
+    color: #DD6E42;
+    font-size: xx-large;
+    font-weight: 600;
+    text-decoration: none;
+
+   
+    
+}
+
+.welcome{
+    width: 100vw;
+}
+
 .footer-container{
     width: 100%;
     height: 5vh;
-    background-color: black;
+    background-color: #4f6d7a;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: fixed; */
+    position: fixed;
     bottom: 0;
-    margin: 50px, 0px, 0px, 0px;
+    margin: 70px, 0px, 0px, 0px;
+    
+
 }
 
 .footer-container > p{
     color: white;
+    font-size: x-small;
 }
 
 .home-link{
@@ -70,3 +120,41 @@ form{
     text-decoration: none;
     font-size: medium;
 }
+
+@media (min-width: 600px) {
+    button + button,
+    input + button {
+      margin-left: 1rem;
+    }
+  
+    .gallery {
+      column-count: 2;
+     
+    }
+    .drink-display{
+        height: 30vh;
+        width: 30vh;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .gallery {
+      column-count: 3;
+      
+    }
+    .drink-display{
+        height: 30vh;
+        width: 30vh;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .gallery {
+      column-count: 4;
+      
+    }
+    .drink-display{
+        height: 30vh;
+        width: 30vh;
+    }
+  }
