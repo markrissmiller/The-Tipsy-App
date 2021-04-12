@@ -1,5 +1,6 @@
 # The Tipsy App
-My first application using React. The app displays a list of 10 random drinks on the homepage which all are links to an ingredients/ instructions page. The user can also   
+
+My first application using React. The app displays a list of 10 random drinks on the homepage which all are links to an ingredients/ instructions page. The user can also search by name of drink or key word in title of drink (ex: if vodka is searched it will display drinks with the word "vodka" in the title as opposed to drinks with vodka as an ingredient).
 
 
 ## Project Link
