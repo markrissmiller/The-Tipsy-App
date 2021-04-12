@@ -6,7 +6,7 @@ function Home({homeData}) {
     <div className='gallery'>
       <div className='welcome'>
       <h1>Welcome To The Tipsy App!</h1>
-      <p>search for a drink or try a random one below!</p>
+      <p>Search for a drink or try a random one below!</p>
       <p className='center'>Please Drink Responsibly</p>
       </div>
       <div >
